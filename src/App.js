@@ -4,14 +4,16 @@ import './App.css';
 const content = {
   en: [
     {
+      toUkr: "ukr",
+      toEng: "en"
+    },
+    {
       full_name: 'Andrii Soroka',
       phone: ['phone', '063768542'],
       mail: [' mail', 'dree0103@gmail.com'],
       age: ['age', 23],
       nationality: ['nationality', 'Ukrainian'],
       city: ['city', 'Lviv'],
-      toUkr: "ukr",
-      toEng: "en",
     },
     {
       title: "GOAL",
@@ -46,47 +48,48 @@ const content = {
     }
   ],
   ukr: [
-      {
-        full_name: 'Андрій Сорока',
-        phone: ['телефон', '063768542'],
-        mail: ['пошта', 'dree0103@gmail.com'],
-        age: ['вік', 23],
-        nationality: ['національність', 'українець'],
-        city: ['місто', 'Львів'],
-        toUkr: "укр",
-        toEng: "англ",
-        
-      },{
-        title: "ЦІЛЬ",
-        bold_text: "",
-        text: "Я шукаю роботу як молодшого фронт-розробника в компанії цікавих та активних людей.",
-        list: []
+    {
+      toUkr: "укр",
+      toEng: "англ",
+    },
+    {
+      full_name: 'Андрій Сорока',
+      phone: ['телефон', '063768542'],
+      mail: ['пошта', 'dree0103@gmail.com'],
+      age: ['вік', 23],
+      nationality: ['національність', 'українець'],
+      city: ['місто', 'Львів'],
+    },{
+      title: "ЦІЛЬ",
+      bold_text: "",
+      text: "Я шукаю роботу як молодшого фронт-розробника в компанії цікавих та активних людей.",
+      list: []
       }, {
-        title: "НАВИКИ",
-        bold_text: "",
-        text: "",
-        list: ['HTML', 'CSS', 'JavaScript']
-      }, {
-        title: "ДОСВІД РОБОТИ",
-        bold_text: "Лютий 2018 - квітень 2018 року ",
-        text: "Адміністратор, 'ESCAPE QUEST' ",
-        list: []
-      }, {
-        title: "ОСВІТА",
-        bold_text: "Національний університет 'Львівська політехніка'",
-        text: "Магістр, Сфера навчання 'Видавнича діяльність інформаційних технологій'.",
-        list: []
-      }, {
-        title: "КУРСИ",
-        bold_text: "",
-        text: "Успішно закінчив курс JavaScript на 'ОКТЕНВЕБ УНІВЕРСИТЕТ', а також пройшов такі онлайн курси:",
-        list: ['Codecademy', 'W3Schools', 'HTML Academy']
-      }, {
-        title: "ІНТЕРЕС",
-        bold_text: "",
-        text: "Триатлон (плавання, їзда на велосипеді та біг), комп'ютерні ігри, подорожі, походи в гори.",
-        list: []
-      }
+      title: "НАВИКИ",
+      bold_text: "",
+      text: "",
+      list: ['HTML', 'CSS', 'JavaScript']
+    }, {
+      title: "ДОСВІД РОБОТИ",
+      bold_text: "Лютий 2018 - квітень 2018 року ",
+      text: "Адміністратор, 'ESCAPE QUEST' ",
+      list: []
+    }, {
+      title: "ОСВІТА",
+      bold_text: "Національний університет 'Львівська політехніка'",
+      text: "Магістр, Сфера навчання 'Видавнича діяльність інформаційних технологій'.",
+      list: []
+    }, {
+      title: "КУРСИ",
+      bold_text: "",
+      text: "Успішно закінчив курс JavaScript на 'ОКТЕНВЕБ УНІВЕРСИТЕТ', а також пройшов такі онлайн курси:",
+      list: ['Codecademy', 'W3Schools', 'HTML Academy']
+    }, {
+      title: "ІНТЕРЕС",
+      bold_text: "",
+      text: "Триатлон (плавання, їзда на велосипеді та біг), комп'ютерні ігри, подорожі, походи в гори.",
+      list: []
+    }
   ]
 };
 
@@ -181,10 +184,6 @@ class App extends Component {
   }
   render() {
     return (
-      // <div className="App">
-      //   <Header />
-      //   <MainArticle />
-      // </div>
       <LanguageContext.Provider value={content[this.state.language]}>
       <div>
         <LanguageContext.Consumer>
@@ -199,8 +198,8 @@ class App extends Component {
                     {content[0].toUkr}
                   </button>
                 </div>
-                <Header mainInfo={content[0]} />
-                <MainArticle items={content.slice(1)} />
+                <Header mainInfo={content[1]} />
+                <MainArticle items={content.slice(2)} />
               </div>
             );
           }}
