@@ -1,4 +1,5 @@
 import React, { Component, createContext } from 'react';
+import foto from './n.jpg';
 import './App.css';
 
 const content = {
@@ -100,7 +101,7 @@ class Header extends React.Component {
     return (
       <header className="main-header">
         <MainInfo mainInfo={this.props.mainInfo} />
-        <Foto />
+        <Foto foto={this.props.foto} />
       </header>
     )
   } 
@@ -130,7 +131,7 @@ class Foto extends React.Component {
   render () {
     return (
       <div>
-        <img src="" alt="my foto" /> 
+        <img className="foto" src={this.props.foto} alt="my foto" /> 
       </div>
     )
   }
@@ -198,7 +199,7 @@ class App extends Component {
                     {content[0].toUkr}
                   </button>
                 </div>
-                <Header mainInfo={content[1]} />
+                <Header mainInfo={content[1]} foto={foto} />
                 <MainArticle items={content.slice(2)} />
               </div>
             );
