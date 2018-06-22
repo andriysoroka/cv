@@ -24,6 +24,48 @@
 .foto {
   width: 150px;
 }
+.bold {
+  font-weight: bold;
+}
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: left;
+  font-weight: bold;
+}
+.main-article {
+  text-align: left;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;  
+}
+.item > div {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+.item > div:first-of-type {
+  width: 30%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.item-info {
+  width: 70%;
+}
+ul {
+  margin: 0;
+}
+.skills {
+  list-style-type: none;
+  padding: 0;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
